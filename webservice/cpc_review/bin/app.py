@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import web
 from nltk import ngrams
 import numpy as np
@@ -6,6 +8,7 @@ from sklearn import metrics
 from sklearn.cross_validation import train_test_split
 import re
 import json
+from sklearn.externals import joblib
 
 urls = (
 	'/', 'Index' 
@@ -42,6 +45,7 @@ class Index(object):
 def read_data(file_name):
 	f = open(file_name, "r")
 	for line in f:
+		line = line.rstrip()
 		line = unicode(line, 'utf8')
 		data.append(line)
 	f.close()
@@ -60,38 +64,53 @@ def training():
 	read_data("preprocessor.txt")
 	read_target_train()
 	# n_grams get similar document
+	f = open("properties.txt", "w")
 	for i in xrange(len(data)):
-		n_grams = [data[i][j:j + n_of_grams] for j in xrange(len(data[i]) - n_of_grams + 1)]
+		# n_grams = [data[i][j:j + n_of_grams] for j in xrange(len(data[i]) - n_of_grams + 1)]
+		n_grams = data[i].split(" ")
 		for grams in n_grams:
 			if grams not in properties:
 				properties.append(grams)
-	print("len properties: %d" % len(properties))
+				f.write(grams.encode("utf-8") + "\n")
+	f.close()
+
+	print len(properties)
 	# Get feature of each other
 	for i in xrange(0, len(data)):
-		dic = ""
 		data_tmp = []
+		arr_data = data[i].split(" ")
+		arr_len = len(data[i])
 		for j in xrange(0, len(properties)):
 			_temp = data[i].count(properties[j])
-			dic = dic + str(_temp) + " "
-			data_tmp.append(_temp)
+			x = _temp / float(arr_len)
+			data_tmp.append(x)
 		data_X.append(data_tmp)
 	# sklean
 	X = np.array(data_X)
 	y = np.array(target_y)
 	knn.fit(X, y)
-
+	joblib.dump(knn, "knn.pkl")
 
 # predict for new sample
 def prediction_data(content):
-	print content
-	global knn
+	knn = joblib.load("knn.pkl")
+	properties = []
+	f = open("properties.txt", "r")
+	for line in f:
+		line = line.rstrip()
+		properties.append(line.decode("utf-8"))
 	data_tmp = []
+	
+	# print properties[0] in content
 	test = content.lower()
-	test = test.encode("utf-8")
+	test = test.split(" ")
+	test_len = len(test)
 	for j in xrange(0,len(properties)):
-		_temp = test.count(properties[j].encode("utf-8"))
-		data_tmp.append(_temp)
+		_temp = test.count(properties[j])
+		x = _temp / float(test_len)
+		data_tmp.append(x)
 	pre = np.array(data_tmp)
+	# print np.count_nonzero(pre == 0)
 	x = knn.predict(pre)
 	if (x[0] == 1):
 		return True

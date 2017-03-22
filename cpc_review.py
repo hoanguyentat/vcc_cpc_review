@@ -33,17 +33,20 @@ def no_accent_vietnamese(s):
 
 # Delete space, special charactor
 def remove_special(s):
-	s = re.sub(r'[^\x00-\x7F]+',' ', s)
-	s = re.sub(r'[0-9]+','',s)
-	s = re.sub(r'&[a-z]+;', '', s)
+	# s = re.sub(r'[^\x00-\x7F]+',' ', s)
+	# s = re.sub(r'[0-9]+','',s)
+	# s = re.sub(r'&[a-z]+;', '', s)
 	s = re.sub(r' {1,}','', s)
-	s = re.sub(r'[^a-z]+','',s)
+	# s = re.sub(r'[^a-z]+','',s)
+	s = re.sub(r'\n','', s)
+	s = re.sub(r'\"','', s)	
 	return s
 
 # read data for training
 def read_data(file_name):
 	f = open(file_name, "r")
 	for line in f:
+		line = line.rstrip()
 		line = unicode(line, 'utf8')
 		data.append(line)
 	f.close()
@@ -70,52 +73,51 @@ def training():
 	read_target_train()
 	# n_grams get similar document
 	for i in xrange(len(data)):
-		n_grams = [data[i][j:j + n_of_grams] for j in xrange(len(data[i]) - n_of_grams + 1)]
+		# n_grams = [data[i][j:j + n_of_grams] for j in xrange(len(data[i]) - n_of_grams + 1)]
+		n_grams = data[i].split(" ")
 		for grams in n_grams:
 			if grams not in properties:
 				properties.append(grams)
 	print("len properties: %d" % len(properties))
 	# Get feature of each other
 	for i in xrange(0, len(data)):
-		dic = ""
 		data_tmp = []
+		arr_data = data[i].split(" ")
+		arr_len = len(data[i])
 		for j in xrange(0, len(properties)):
-			_temp = data[i].count(properties[j])
-			dic = dic + str(_temp) + " "
-			data_tmp.append(_temp)
+			_temp = arr_data.count(properties[j])
+			x = _temp / float(arr_len)
+			data_tmp.append(x)
 		data_X.append(data_tmp)
-	# sklean
+	# sklearn
 	X = np.array(data_X)
 	y = np.array(target_y)
 	knn.fit(X, y)
-
-	# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 4)
-	# knn.fit(X_train, y_train)
 
 
 # predict for new sample
 def prediction_data():
 	data_pre = []
-	with open("test/test8.json") as json_data:
+	with open("test/test_aolot.json") as json_data:
 		d = json.load(json_data)
 		for x in d:
 			# print(x)
 			data_tmp = []
 			content = x["categoryid2"] + x["name"] + x["description"]
 			content = content.lower()
+			content = content.rstrip()
 			# content = no_accent_vietnamese(content)
 			# content = remove_special(content)
 			content = content.encode("utf-8")
+			content = content.split(" ")
+			content_len = len(content)
 			for j in xrange(0,len(properties)):
 				_temp = content.count(properties[j].encode("utf-8"))
-				data_tmp.append(_temp)
+				x = _temp / float(content_len)
+				data_tmp.append(x)
 			data_pre.append(data_tmp)
 	pre = np.array(data_pre)
 	print knn.predict(pre)
-	# global y_test, X_test
-	# print (y_test)
-	# y_result = knn.predict(X_test)
-	# print(metrics.accuracy_score(y_test, y_result))
 
 if __name__ == "__main__":
 	training()

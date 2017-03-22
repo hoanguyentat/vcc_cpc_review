@@ -62,15 +62,17 @@ def remove_special(s):
 	# s = re.sub(r'[0-9]+','',s)
 	# s = re.sub(r'&[a-z]+;', '', s)
 	s = re.sub(r' {1,}',' ', s)
+	s = re.sub(r'\n','', s)
+	s = re.sub(r'\"','', s)	
 	# s = re.sub(r'[^a-z]+','',s)
 	return s
 
 data_contents = []
-# f_write = open("preprocessor.txt", "w")
-f_write = open("test/test8.txt", "w")
-# f_target = open("labels.txt", "w")
-f_target = open("test/labels8.txt", "w")
-with open("test/test8.json") as json_data:
+f_write = open("preprocessor.txt", "w")
+# f_write = open("test/aolot_test8.txt", "w")
+f_target = open("labels.txt", "w")
+# f_target = open("test/aolot_labels8.txt", "w")
+with open("datatxt.json") as json_data:
 	d = json.load(json_data)
 	html_parser = HTMLParser.HTMLParser()
 	count = 0
@@ -78,7 +80,7 @@ with open("test/test8.json") as json_data:
 		content = x["categoryid2"] + " " + x["name"] + " " + x["description"]
 		content = content.lower()
 		content = html_parser.unescape(content)
-		# content = no_accent_vietnamese(content)
+		content = remove_special(content)
 		check_sexcontent = False
 		for i in sex_words:
 			i = i.encode("utf-8")
