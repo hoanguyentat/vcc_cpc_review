@@ -1,0 +1,173 @@
+// yes
+
+11	Cao và rượu hồng sâm
+2	Các loại hồng sâm khác
+120	Chăm sóc răng miệng
+95	Dầu / tinh dầu dưỡng tóc
+186	Dầu gội
+98	Dầu gội / Sữa tắm/ muối tắm
+12	Dầu gội/xả / Sữa tắm nam
+90	Dầu xả
+10	Dưỡng da / Giảm bụng
+15	Dưỡng da chân
+101	Dưỡng da tay
+30	Gel/sáp/chai xịt tạo kiểu tóc
+2	Hồng sâm Hàn Quốc
+19	Hồng sâm nước
+12	Hồng sâm viên và lát
+375	Kem / tinh dầu mát xa cơ thể
+33	Kem /tinh dầu mát xa mặt
+120	Kem BB
+59	Kem che khuyết điểm
+138	Kem chống nắng
+589	Kem dưỡng
+16	Kem dưỡng / mặt nạ nam
+86	Kem dưỡng mắt
+74	Kem hấp dầu / ủ tóc
+56	Kem lót
+118	Kem nền
+15	Kem tẩy lông
+48	Kem trị hăm / Kem dưỡng da / Phấn rôm
+13	Kem trị rạn da / Dầu dừa
+141	Kem/sữa/dầu tẩy trang
+23	Kẹo và trà hồng sâm
+16	Lăn / xịt khử mùi / Phấn thơm
+13	Lăn / xịt khử mùi nam
+73	Muối tắm / Tẩy tế bào chết
+5	Mỹ phẩm
+1	Nước hoa
+33	Nước hoa bộ
+7	Nước hoa hồng / dưỡng da nam
+232	Nước hoa hồng /xịt khoáng
+115	Nước hoa nam
+367	Nước hoa nữ
+47	Nước hoa toàn thân
+99	Phấn má hồng / phấn highlight
+111	Phấn mắt/ sáp mắt
+223	Phấn phủ / Phấn nền
+14	Sản phẩm dành cho vùng ngực
+111	Sản phẩm khác cho bà bầu
+41	Sản phẩm tan mỡ /giảm béo
+84	Son bóng
+137	Son dưỡng
+428	Son môi
+443	Sơn móng /chăm sóc móng
+52	Son tint
+178	Sữa /kem dưỡng thể
+96	Sữa dưỡng
+299	Sữa rửa mặt
+2	Sữa rửa mặt nam
+249	Sữa tắm
+106	Tẩy tế bào chết
+46	Thảo dược Chăm sóc sau sinh
+6	Thực phẩm ăn liền
+11	Thực phẩm ăn uống
+72	Thực phẩm bổ dưỡng
+24	Thực phẩm dinh dưỡng
+26	Thực phẩm Hàn Quốc khác
+25	Thực phẩm khô/đồ hộp
+58	Thực phẩm làm đẹp
+13	Thức uống
+51	Thức uống Hàn Quốc
+74	Thuốc nhuộm / duỗi / uốn
+398	Tinh chất / serum
+8	Tinh chất/ sữa dưỡng nam
+23	Đồ ăn vặt/Snack
+22	Đồ ăn vặt/Snack Hàn Quốc
+
+// lotte
+22	 Bánh Ăn Dặm 
+34	 Bánh Gạo & Trà Xanh  
+1	 Bộ Nước Hoa Nam  
+16	 Bộ Nước Hoa Nữ  
+83	 Cá Hộp  
+172	 Dầu Ăn & Dầu Olive 
+193	 Dầu Gội 
+42	 Dầu Gội & Sữa Tắm 
+11	 Dầu Gội & Xả 
+35	 Dầu Xả 
+63	 Dầu Xả & Dưỡng Tóc  
+1	 Dược mỹ phẩm 
+1	 Dưỡng chất từ thiên nhiên 
+4	 Dưỡng Da Mặt 
+2	 Dưỡng Da Vùng Mắt 
+2	 Dưỡng Da Đầu 
+24	 Dưỡng Tay & Chân 
+96	 Dưỡng thể 
+8	 Dưỡng Thể & Dầu Em Bé 
+31	 Dưỡng Tóc 
+69	 Eau de Parfume Nữ  
+8	 Eau de Toilettte Nam  
+34	 Eau de Toilettte Nữ  
+9	 Gel, Sáp & Xịt Tóc 
+29	 Kem Che Khuyết Điểm  
+25	 Kem Chống Hăm & Phấn Rơm 
+61	 Kem Chống Lão Hóa  
+102	 Kem Chống Nắng  
+2	 Kem Chống Nắng & Côn Trùng  
+92	 Kem Dưỡng  
+13	 Kem Dưỡng Ban Ngày  
+56	 Kem Dưỡng Ban Ngày & Đêm  
+11	 Kem Dưỡng Ban Đêm 
+87	 Kem Dưỡng Tay & Chân  
+41	 Kem Dưỡng Toàn Thân  
+32	 Kem Dưỡng Vùng Mắt  
+23	 Kem Lót 
+113	 Kem Nền  
+43	 Kem Trắng Da  
+26	 Kem Trị Mụn 
+13	 Kem Trị Đốm Nâu & Sẹo 
+112	 Kem Đánh Răng 
+232	 Mật Ong, Mứt & Khác  
+4	 Mỹ phẩm cao cấp 
+2	 Mỹ Phẩm Hàn Quốc Cao Cấp - OHUI 
+1	 Mỹ Phẩm Nam  
+32	 Nhân Sâm & Hồng Sâm 
+1	 Nhân Sâm & Nhân Sâm Đỏ 
+6	 Nhuộc Tóc 
+33	 Nhuộm Tóc  
+7	 Nước Giặt & Khăn  
+34	 Nước Hoa  
+98	 Nước Hoa Hồng & Xịt Khoáng  
+1	 Nước Hoa Nam 
+12	 Nước Hoa Nữ 
+16	 Nước Lau Kiếng  
+1	 Nước Lau Sàn 
+81	 Nước Lau Sàn & Phòng Tắm  
+9	 Nước Súc Miệng & Chăm Sóc Nha Khoa 
+10	 Nước Súc Miệng Và Chăm Sóc Nha Khoa 
+35	 Nước Tăng Lực 
+24	 Nước Tẩy Quần Áo  
+94	 Nước Xả Vải 
+31	 Nước Xả Vải & Giặt Đồ 
+89	 Phấn má  
+65	 Phấn Mắt  
+60	 Phấn Phủ  
+42	 Serum  
+47	 Serum & Dưỡng Ẩm 
+22	 Son Bóng 
+104	 Son Dưỡng 
+29	 Son Lì 
+320	 Son Môi  
+284	 Sơn Móng  
+3	 Sơn Nền & Dưỡng Móng  
+56	 Sữa Rửa Mặt 
+139	 Sữa Tắm  
+183	 Sữa Tắm & Xà Phòng 
+4	 Tẩy Lông 
+68	 Tẩy Tế Bào Chết  
+8	 Tẩy Trang 
+17	 Tẩy Trang Mặt 
+6	 Tẩy Trang Mắt & Môi 
+1	 Tẩy Trang Móng  
+5	 Thức Ăn Cho Chó 
+4	 Thức Ăn Cho Mèo 
+20	 Thực Phẩm & Thức Uống Dinh Dưỡng 
+72	 Thực Phẩm Dinh Dưỡng 
+123	 Thực Phẩm Khô & Đồ Hộp  
+5	 Thực Phẩm Khô Ăn Liền 
+23	 Thức Uống Chocolate & Cacao  
+75	 Thức Uống Dinh Dưỡng  
+6	 Thuốc Tẩy 
+96	 Tinh Dầu 
+156	 Viên Khử Mùi, Sáp Thơm, Xịt Phòng  
