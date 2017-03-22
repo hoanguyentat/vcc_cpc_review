@@ -7,6 +7,7 @@ from sklearn import metrics
 from sklearn.cross_validation import train_test_split
 import re
 import json
+import HTMLParser
 
 knn = KNeighborsClassifier(n_neighbors = 5)
 X_train = None
@@ -100,10 +101,12 @@ def prediction_data():
 	data_pre = []
 	with open("test/test_aolot.json") as json_data:
 		d = json.load(json_data)
+		html_parser = HTMLParser.HTMLParser()
 		for x in d:
 			# print(x)
 			data_tmp = []
 			content = x["categoryid2"] + x["name"] + x["description"]
+			test = html_parser.unescape(content)
 			content = content.lower()
 			content = content.rstrip()
 			# content = no_accent_vietnamese(content)

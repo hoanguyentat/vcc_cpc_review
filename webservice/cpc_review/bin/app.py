@@ -9,6 +9,7 @@ from sklearn.cross_validation import train_test_split
 import re
 import json
 from sklearn.externals import joblib
+import HTMLParser
 
 urls = (
 	'/', 'Index' 
@@ -100,9 +101,10 @@ def prediction_data(content):
 		line = line.rstrip()
 		properties.append(line.decode("utf-8"))
 	data_tmp = []
-	
+	html_parser = HTMLParser.HTMLParser()
 	# print properties[0] in content
 	test = content.lower()
+	test = html_parser.unescape(test)
 	test = test.split(" ")
 	test_len = len(test)
 	for j in xrange(0,len(properties)):
