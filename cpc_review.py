@@ -40,7 +40,7 @@ def remove_special(s):
 	s = re.sub(r' {1,}','', s)
 	# s = re.sub(r'[^a-z]+','',s)
 	s = re.sub(r'\n','', s)
-	s = re.sub(r'\"','', s)	
+	s = re.sub(r'\"','', s)
 	return s
 
 # read data for training
@@ -50,6 +50,7 @@ def read_data(file_name):
 		line = line.rstrip()
 		line = unicode(line, 'utf8')
 		data.append(line)
+	print len(data)
 	f.close()
 
 #separate content
@@ -99,7 +100,7 @@ def training():
 # predict for new sample
 def prediction_data():
 	data_pre = []
-	with open("test/test_aolot.json") as json_data:
+	with open("test/test5.json") as json_data:
 		d = json.load(json_data)
 		html_parser = HTMLParser.HTMLParser()
 		for x in d:

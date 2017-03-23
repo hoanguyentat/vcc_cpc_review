@@ -16,10 +16,6 @@ urls = (
 )
 
 knn = KNeighborsClassifier(n_neighbors = 5)
-X_train = None
-X_test = None
-y_train = None
-y_test = None
 data = []
 target_y = []
 data_X = []
@@ -49,6 +45,7 @@ def read_data(file_name):
 		line = line.rstrip()
 		line = unicode(line, 'utf8')
 		data.append(line)
+	print len(data)
 	f.close()
 
 # read label for data training
@@ -57,11 +54,11 @@ def read_target_train():
 	for line in f_target:
 		for x in line.split():
 			target_y.append(int(x))
+	print len(target_y)
 	f_target.close()
 
 # training from data
 def training():
-	global y_test, X_test, knn
 	read_data("preprocessor.txt")
 	read_target_train()
 	# n_grams get similar document
@@ -71,11 +68,12 @@ def training():
 		n_grams = data[i].split(" ")
 		for grams in n_grams:
 			if grams not in properties:
+				# grams = grams.rstrip()
 				properties.append(grams)
 				f.write(grams.encode("utf-8") + "\n")
 	f.close()
 
-	print len(properties)
+	print("len properties: %d" % len(properties))
 	# Get feature of each other
 	for i in xrange(0, len(data)):
 		data_tmp = []
@@ -102,6 +100,7 @@ def prediction_data(content):
 		properties.append(line.decode("utf-8"))
 	data_tmp = []
 	html_parser = HTMLParser.HTMLParser()
+	print len(properties)
 	# print properties[0] in content
 	test = content.lower()
 	test = html_parser.unescape(test)

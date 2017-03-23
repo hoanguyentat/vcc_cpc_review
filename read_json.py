@@ -68,11 +68,11 @@ def remove_special(s):
 	return s
 
 data_contents = []
-f_write = open("preprocessor.txt", "w")
-# f_write = open("test/aolot_test8.txt", "w")
-f_target = open("labels.txt", "w")
-# f_target = open("test/aolot_labels8.txt", "w")
-with open("datatxt.json") as json_data:
+f_write = open("3000_mau_text.txt", "w")
+# f_write = open("test/test9.txt", "w")
+f_target = open("3000_mau_labels.txt", "w")
+# f_target = open("test/labels9.txt", "w")
+with open("test/3000mautest.json") as json_data:
 	d = json.load(json_data)
 	html_parser = HTMLParser.HTMLParser()
 	count = 0
